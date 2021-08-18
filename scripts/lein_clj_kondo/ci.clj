@@ -21,7 +21,7 @@
   (shell "git add project.clj CHANGELOG.md")
   (shell (format "git commit -m \"Release: %s\"" tag))
   (shell (str "git tag " tag))
-  (shell "git pushell origin HEAD")
+  (shell "git push origin HEAD")
   (shell "git push origin --tags"))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
