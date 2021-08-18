@@ -19,9 +19,17 @@ For more information on all available options, Check the [documentation](https:/
 ### lein CLI
 
 ``` bash
-$ lein clj-kondo --lint $(lein classpath)
+$ lein clj-kondo --lint $classpath
 ```
 
 ### Aliases
 
-TODO
+You can configure your project.clj to add custom aliases to run specific clj-kondo tasks, below you can find a simple example which first lint the project dependencies and then lint the project code:
+
+```clojure
+,,,
+:aliases {"clj-kondo-deps" ["clj-kondo" "--copy-configs" "--dependencies" "--lint" "$classpath"]
+          "clj-kondo" ["do" ["clj-kondo-deps"] ["clj-kondo" "--lint" "src" "test"]]}
+,,,
+```
+
