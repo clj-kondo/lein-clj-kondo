@@ -13,8 +13,8 @@
   (shell "git fetch origin")
   (shell "git pull origin HEAD")
   (replace-in-file "project.clj"
-                   #"clj-kondo/lein-clj-kondo \"[0-9]+.[0-9]+.[0-9]+.*\""
-                   (format "clj-kondo/lein-clj-kondo \"%s\"" tag))
+                   #"com.github.clj-kondo/lein-clj-kondo \"[0-9]+.[0-9]+.[0-9]+.*\""
+                   (format "com.github.clj-kondo/lein-clj-kondo \"%s\"" tag))
   (replace-in-file "CHANGELOG.md"
                    #"## Unreleased"
                    (format "## Unreleased\n\n## %s" tag))
