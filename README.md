@@ -1,3 +1,5 @@
+[![Clojars Project](https://img.shields.io/clojars/v/com.github.clj-kondo/lein-clj-kondo.svg)](https://clojars.org/com.github.clj-kondo/lein-clj-kondo)
+
 # lein-clj-kondo
 
 A Leiningen plugin to run [clj-kondo](https://github.com/clj-kondo/clj-kondo).
@@ -7,7 +9,7 @@ A Leiningen plugin to run [clj-kondo](https://github.com/clj-kondo/clj-kondo).
 Add the plugin to your `project.clj`:
 
 ```clojure
-:plugins [[clj-kondo/lein-clj-kondo "0.1.0"]]
+:plugins [[clj-kondo/lein-clj-kondo "0.1.1"]]
 ```
 
 ## Usage
