@@ -9,7 +9,7 @@ A Leiningen plugin to run [clj-kondo](https://github.com/clj-kondo/clj-kondo).
 Add the plugin to your `project.clj`:
 
 ```clojure
-:plugins [[clj-kondo/lein-clj-kondo "0.1.1"]]
+:plugins [[com.github.clj-kondo/lein-clj-kondo "0.1.1"]]
 ```
 
 ## Usage
