@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Bump clj-kondo to 2022.04.25
+
 ## v0.1.3
 
 ## v0.1.3
