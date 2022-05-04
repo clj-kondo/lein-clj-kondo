@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :eval-in-leiningen true
   :pedantic? :warn
-  :dependencies [[clj-kondo/clj-kondo "2021.10.19"]]
+  :dependencies [[clj-kondo/clj-kondo "2022.04.25"]]
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                     :username :env/clojars_user
                                     :password :env/clojars_pass
