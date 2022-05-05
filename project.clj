@@ -7,6 +7,6 @@
   :pedantic? :warn
   :dependencies [[clj-kondo/clj-kondo "2022.04.25"]]
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
-                                    :username :env/clojars_user
-                                    :password :env/clojars_pass
+                                    :username :env/clojars_username
+                                    :password :env/clojars_password
                                     :sign-releases false}]])
