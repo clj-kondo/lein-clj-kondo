@@ -16,7 +16,8 @@ jobs:
           lein: 2.9.7
 
       - name: Deploy
-        uses: jlesquembre/clojars-publish-action@0.3
         env:
           CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
           CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
+        run: |
+          lein deploy clojars
