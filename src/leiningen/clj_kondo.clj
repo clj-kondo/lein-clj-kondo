@@ -17,7 +17,7 @@
                    (into ["--lint"] v)))
         exit-status (apply kondo/main args)]
     (when-not (zero? exit-status)
-      (System/exit exit-status))))
+      (lein-core/exit exit-status))))
 
 (defn parse-additional [project options]
   (mapv (fn [option]
