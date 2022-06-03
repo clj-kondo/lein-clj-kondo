@@ -2,11 +2,21 @@
   (:require
    [clj-kondo.main :as kondo]
    [leiningen.classpath :as lein-classpath]
-   [leiningen.core.main :as lein-core]))
+   [leiningen.core.main :as lein-core])
+  (:import
+   (java.io File)))
 
-(defn ^:private run-kondo! [options]
-  (let [exit-status (apply kondo/main options)]
-    (when-not (= 0 exit-status)
+(defn ^:private run-kondo! [{:keys [source-paths test-paths]} options]
+  (let [args (or (not-empty options)
+                 (when-let [v (->> [source-paths test-paths]
+                                   (reduce into [])
+                                   (filterv (fn [^String s]
+                                              (-> s File. .exists)))
+                                   (not-empty))]
+                   (apply lein-core/info "Linting" v)
+                   (into ["--lint"] v)))
+        exit-status (apply kondo/main args)]
+    (when-not (zero? exit-status)
       (System/exit exit-status))))
 
 (defn parse-additional [project options]
@@ -21,6 +31,6 @@
   [project & options]
   (let [options (parse-additional project options)]
     (if lein-core/*info*
-      (run-kondo! options)
+      (run-kondo! project options)
       (with-out-str
-        (run-kondo! options)))))
+        (run-kondo! project options)))))
