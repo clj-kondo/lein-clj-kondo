@@ -34,10 +34,14 @@ This plugin accepts one of the following patterns:
 
 ``` bash
 $ # 1.- Analyse your project:
-$ lein clj-kondo --copy-configs --dependencies --lint $classpath
+$ lein with-profile +test clj-kondo --copy-configs --dependencies --lint $classpath
 $ # 2.- Lint your source and test paths:
-$ lein clj-kondo
+$ lein with-profile +test clj-kondo
 ```
+
+Activating the `+test` profile is recommended, so that any `:test` dependencies are analysed, increasing linting accuracy.
+
+(Note that the `:dev` profile is already active by default)
 
 ### Aliases
 
@@ -45,8 +49,8 @@ You can configure your project.clj to add custom aliases to run specific clj-kon
 
 ```clojure
 ,,,
-:aliases {"clj-kondo-deps" ["clj-kondo" "--copy-configs" "--dependencies" "--lint" "$classpath"]
-          "clj-kondo-lint" ["do" ["clj-kondo-deps"] ["clj-kondo"]]}
+:aliases {"clj-kondo-deps" ["with-profile" "+test" "clj-kondo" "--copy-configs" "--dependencies" "--lint" "$classpath"]
+          "clj-kondo-lint" ["do" ["clj-kondo-deps"] ["with-profile" "+test" "clj-kondo"]]}
 ,,,
 ```
 
