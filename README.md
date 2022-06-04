@@ -4,6 +4,13 @@
 
 A Leiningen plugin to run [clj-kondo](https://github.com/clj-kondo/clj-kondo).
 
+## Rationale
+
+Running clj-kondo through Leiningen has some advantages, since it can compute for you things that would have to be specified by hand otherwise
+(and those things can be forgotten, outdated, etc).
+
+There's the tradeoff of startup speed, which might not be as critical in a CI environment as it is in your CLI.
+
 ## Installation
 
 Add the plugin to your `project.clj`:
