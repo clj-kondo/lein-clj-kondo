@@ -34,7 +34,7 @@ This plugin accepts one of the following patterns:
 
 ``` bash
 $ # 1.- Analyse your project:
-$ lein with-profile +test clj-kondo --copy-configs --dependencies --lint $classpath
+$ lein with-profile +test clj-kondo --copy-configs --dependencies --parallel $classpath
 $ # 2.- Lint your source and test paths:
 $ lein with-profile +test clj-kondo
 ```
@@ -49,7 +49,7 @@ You can configure your project.clj to add custom aliases to run specific clj-kon
 
 ```clojure
 ,,,
-:aliases {"clj-kondo-deps" ["with-profile" "+test" "clj-kondo" "--copy-configs" "--dependencies" "--lint" "$classpath"]
+:aliases {"clj-kondo-deps" ["with-profile" "+test" "clj-kondo" "--copy-configs" "--dependencies" "--parallel" "$classpath"]
           "clj-kondo-lint" ["do" ["clj-kondo-deps"] ["with-profile" "+test" "clj-kondo"]]}
 ,,,
 ```
