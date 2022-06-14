@@ -54,3 +54,8 @@ You can configure your project.clj to add custom aliases to run specific clj-kon
 ,,,
 ```
 
+### Deploy
+
+`bb tag x.y.z` to tag the new release.
+
+`bb deploy` to deploy to clojars.
