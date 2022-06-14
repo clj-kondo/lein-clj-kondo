@@ -16,7 +16,7 @@ There's the tradeoff of startup speed, which might not be as critical in a CI en
 Add the plugin to your `project.clj`:
 
 ```clojure
-:plugins [[com.github.clj-kondo/lein-clj-kondo "0.1.4"]]
+:plugins [[com.github.clj-kondo/lein-clj-kondo "0.2.0"]]
 ```
 
 ## Usage
