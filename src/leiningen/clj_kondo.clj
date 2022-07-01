@@ -6,7 +6,9 @@
   (:import
    (java.io File)))
 
-(defn ^:private run-kondo! [{:keys [source-paths test-paths]} options]
+(defn ^:private run-kondo! [{:keys [source-paths test-paths]
+                             {:keys [config]} :clj-kondo}
+                            options]
   (let [args (or (not-empty options)
                  (when-let [v (->> [source-paths test-paths]
                                    (reduce into [])
@@ -15,6 +17,8 @@
                                    (not-empty))]
                    (apply lein-core/info "Linting" v)
                    (into ["--lint"] v)))
+        args (cond-> args
+               config (conj "--config" config))
         exit-status (apply kondo/main args)]
     (when-not (zero? exit-status)
       (lein-core/exit exit-status))))
