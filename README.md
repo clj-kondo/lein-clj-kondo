@@ -9,7 +9,9 @@ A Leiningen plugin to run [clj-kondo](https://github.com/clj-kondo/clj-kondo).
 Running clj-kondo through Leiningen has some advantages, since it can compute for you things that would have to be specified by hand otherwise
 (and those things can be forgotten, outdated, etc).
 
-There's the tradeoff of startup speed, which might not be as critical in a CI environment as it is in your CLI.
+It also provides the ability to express clj-kondo options as Lein project map options, which can work nicely with Lein profiles, plugins, etc. 
+
+With using Leiningen, there's the tradeoff of startup speed, which might not be as critical in a CI environment as it is in your CLI.
 
 ## Installation
 
@@ -53,6 +55,20 @@ You can configure your project.clj to add custom aliases to run specific clj-kon
           "clj-kondo-lint" ["do" ["clj-kondo-deps"] ["with-profile" "+test" "clj-kondo"]]}
 ,,,
 ```
+
+## Config
+
+lein-clj-kondo understands clj-kondo config expressed as `:config` in a Leiningen project map. Example:
+
+```clj
+;; Enable a specific linter
+:clj-kondo {:config {:linters {:docstring-leading-trailing-whitespace {:level :warning}}}}
+```
+
+The traditional ways of specifying options of course keep working:
+
+* You can place a `.clj-kondo/config.edn` file in your project.
+* You can use the `--config ...` CLI option.
 
 ### Deploy
 
