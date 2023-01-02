@@ -18,7 +18,7 @@ With using Leiningen, there's the tradeoff of startup speed, which might not be 
 Add the plugin to your `project.clj`:
 
 ```clojure
-:plugins [[com.github.clj-kondo/lein-clj-kondo "0.2.1"]]
+:plugins [[com.github.clj-kondo/lein-clj-kondo "0.2.4"]]
 ```
 
 ## Usage
