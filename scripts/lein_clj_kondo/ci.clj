@@ -1,12 +1,11 @@
 (ns lein-clj-kondo.ci
   (:require
    [babashka.tasks :refer [shell]]
-   [clojure.string :as string]
    [clojure.string :as str]))
 
 (defn ^:private replace-in-file [file regex content]
   (as-> (slurp file) $
-    (string/replace $ regex content)
+    (str/replace $ regex content)
     (spit file $)))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
