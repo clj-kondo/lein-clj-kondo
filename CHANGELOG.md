@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.2
+
+- Support `:fail-level` (as sibling of `:config`)
+
 ## v0.2.1
 
 ## v0.2.0
