@@ -2,11 +2,9 @@
 
 ## Unreleased
 
+- Fix `:fail-level`
+
 ## v0.2.3
-
-## vv0.2.3
-
-## v0.2.2
 
 - Support `:fail-level` (as sibling of `:config`)
 

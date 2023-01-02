@@ -19,7 +19,7 @@
                    (into ["--lint"] v)))
         args (cond-> args
                config (conj "--config" config)
-               fail-level (conj "--fail-level" fail-level))
+               fail-level (conj "--fail-level" (name fail-level)))
         exit-status (apply kondo/main args)]
     (when-not (zero? exit-status)
       (lein-core/exit exit-status))))
