@@ -1,4 +1,4 @@
-(defproject com.github.clj-kondo/lein-clj-kondo "0.2.1"
+(defproject com.github.clj-kondo/lein-clj-kondo "v0.2.3"
   :description "Lein plugin to run clj-kondo"
   :url "https://clj-kondo.github.io/clj-kondo"
   :license {:name "Eclipse Public License"
