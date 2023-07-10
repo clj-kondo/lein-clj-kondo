@@ -32,7 +32,8 @@
         options))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
-(defn ^:no-project-needed clj-kondo
+(defn ^:no-project-needed ^:pass-through-help clj-kondo
+  "Run the clj-kondo linter on a project."
   [project & options]
   (let [options (parse-additional project options)]
     (if lein-core/*info*
