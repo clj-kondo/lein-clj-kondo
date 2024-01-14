@@ -1,11 +1,11 @@
-(defproject com.github.clj-kondo/lein-clj-kondo "2023.10.20"
+(defproject com.github.clj-kondo/lein-clj-kondo "2023.12.15"
   :description "Lein plugin to run clj-kondo"
   :url "https://clj-kondo.github.io/clj-kondo"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :eval-in-leiningen true
   :pedantic? :warn
-  :dependencies [[clj-kondo/clj-kondo "2023.10.20"]]
+  :dependencies [[clj-kondo/clj-kondo "2023.12.15"]]
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                     :username :env/clojars_username
                                     :password :env/clojars_password
