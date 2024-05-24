@@ -1,3 +1,4 @@
 {:paths ["scripts"]
- :tasks {tag lein-clj-kondo.ci/tag
-         deploy lein-clj-kondo.ci/deploy}}
+ :tasks {tag {:doc "Run this from local machine to kick off deploy on CI"
+              :task lein-clj-kondo.ci/tag}
+         ci:publish lein-clj-kondo.ci/deploy}}
